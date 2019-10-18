@@ -1,0 +1,101 @@
+.card-box-border{
+	border-right: 5px solid lightgrey;height: auto;
+	padding-top: 12px;
+}
+
+/* modal */
+
+.mdl-header{
+	background: blueviolet;
+    color: #fff;
+}
+
+
+.mdl-header1{
+	background: green;
+    color: #fff;
+}
+
+.mdl-body{
+	background-color: beige;
+}
+.mdl-bodyy{
+	background-color: beige;
+}
+
+.mdl-body input[type=text],input[type=email],input[type=password],input[type=number], select{
+	background: whitesmoke;
+    border: 1px solid mediumpurple;
+    border-radius: 6px;
+    min-width: 242px;
+    text-align: center;
+}
+
+.mdl-body2 input[type=text],input[type=email],input[type=password],input[type=number], select{
+  background: whitesmoke;
+    border: 1px solid mediumpurple;
+    border-radius: 6px;
+    min-width: 130px;
+    text-align: center;
+}
+
+.mdl-bodyy input, select{
+	background: whitesmoke;
+    border: 1px solid mediumpurple;
+    border-radius: 6px;
+    min-width: 200px;
+    text-align: center;
+}
+
+.mdl-body input:focus{
+	background-color: #e4d2f5;
+}
+
+.req_cls{
+	color: red;
+	font-size: 24px;
+}
+
+/* snackbar */
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
