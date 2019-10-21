@@ -128,7 +128,7 @@
                   </div>
 
                   <div class="col-md-4 mt-4">
-                    <label>Per Unit Share Price:</label>
+                    <label>Paid Up Capital:</label>
                   </div>
                   <div class="col-md-8 mt-4">
                     <input type="number" step="0.01" name="share_price" id="share_price">
@@ -252,7 +252,7 @@
                   </div>
 
                   <div class="col-md-4 mt-4">
-                    <label>Per Unit Share Price:</label>
+                    <label>Paid Up Capital:</label>
                   </div>
                   <div class="col-md-8 mt-4">
                     <input type="number" step="0.01" name="share_price" class="">

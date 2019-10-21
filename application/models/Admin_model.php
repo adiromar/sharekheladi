@@ -207,6 +207,18 @@ class Admin_model extends CI_Model
         }
     }
 
+    public function check_inserted_safety($tbl, $sym){
+      $this->db->select('sector_id');
+      $this->db->where('sector_id', $sym);
+      $query = $this->db->get($tbl);
+
+      if($query->num_rows() > 0){
+        return $query->result_array();
+      }else{
+        return 0;
+      }
+  }
+
     public function check_inserted_portfolio($tbl, $sym,$user){
       $this->db->select('symbol');
       $this->db->where('symbol', $sym);
@@ -221,7 +233,7 @@ class Admin_model extends CI_Model
   }
 
     public function get_price($symbol){
-        $this->db->select('beg_price,share_price');
+        $this->db->select('beg_price,share_price,symbol');
         $this->db->where('symbol', $symbol);
         $query = $this->db->get('company_info');
 

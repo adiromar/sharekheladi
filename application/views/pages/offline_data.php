@@ -60,6 +60,7 @@ $fetch1 = $this->post_model->get_marketinfo_normal();
                 $cagr_tbl_id = $this->admin_model->get_cagr_info_by_symbol($fval['symbol']);
                 $cgr_tbl_id = $cagr_tbl_id[0]['id'];
                 $get = $this->admin_model->get_cagr_data($cgr_tbl_id);
+
                 $f_year=$div=$bon='';
 
                 if(!empty($get)){
@@ -77,19 +78,22 @@ $fetch1 = $this->post_model->get_marketinfo_normal();
                       $div .= $gval['dividend'] . '<br>';
                       $bon .= $gval['bonus'] . '<br>';
                       $cc[] = $gval['financial_year'];
-            
+                        
+                      
                       $bon_1 = ($gval['bonus']/100);
                       $bg1 = (100+(100*$bon_1));
                       // $bg2 = $bg1 + ($bg1 * $gval['bonus']);
                       $gain_year[] = $gval['financial_year']; 
                       $div1 = ($get[0]['dividend']/100);
                       $dg1 = ($beg_price*100)*$div1;
-            
+                        
+                      
                       $bon_arr[] = $gval['bonus'];
                       $div_arr[] = $gval['dividend'];
                     }
                   }
                   $sum_dg += $dg1;
+                  
 // echo 'sum dg: '.$sum_dg;
                   $num_year = count($cc);
                   $num_yr = $num_year -1;
@@ -154,10 +158,11 @@ $fetch1 = $this->post_model->get_marketinfo_normal();
                     echo '<td><button class="btn btn-danger btn-sm">Minimal Investment</button></td>';
                 }elseif($status_ckh > 1 && $status_ckh < 4){
                     echo '<td><button class="btn btn-info btn-sm">Possible Investment</button></td>';
-                }elseif($status_ckh == 4){
+                }elseif($status_ckh >= 4){
                     echo '<td><button class="btn btn-success btn-sm">Best Investment</button></td>';
                 }
 
+                echo '<td>-</td>';
                 // if($bv_value == 0){
                 //     echo '<td><button class="btn btn-info btn-sm">-</button></td>';
                 // }

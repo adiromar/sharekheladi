@@ -19,8 +19,8 @@ error_reporting('false');
             <h5 class="float-right btn-sm mb-2 btn btn-secondary" style="color: #fff;">Market Closed</h5>
         <?php  } ?>
 
-        <table class="table table-bordered table-striped table-hover" border="1">
-        <thead class="thead-dark">
+        <table class="table table-bordered table-striped table-hover" border="1" >
+        <thead class="thead-dark" >
             <th>S.N.</th>
             <th>Company Name</th>
             <th>BV</th> <!-- Manually -->
@@ -28,11 +28,12 @@ error_reporting('false');
             <th>Market value</th> <!-- live m.p. -->
             <th>PB Ratio</th> <!-- = mp/bv -->
             <th>PE Ratio</th> <!-- = mp/eps -->
-            <th>Desired Price</th>
+            <th>Safe Value</th>
             <th>Consumer Surplus</th>
             <th>CAGR</th>
             <th>cagr m.p</th>
-            <th>Status</th>
+            <th>Recommendation to sell</th>
+            <th>Recommendation to buy</th>
         </thead>
         <tbody>
             <?php $i=1;
@@ -131,6 +132,8 @@ error_reporting('false');
         
         </tbody>
     </table>
+
+    
                         </div>
                     </div>
                 </div>
@@ -158,3 +161,55 @@ error_reporting('false');
             </div>
         </div>
     </section>
+
+<style>
+/* .tbl_header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+} */
+
+/* .content {
+  padding: 16px;
+} */
+
+/* .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 105px;
+} */
+
+table thead tr{
+    display:block;
+}
+
+table th,table td{
+    width:100px;
+}
+
+
+table  tbody{
+  display:block;
+  height: 500px;
+  overflow:auto;
+}
+</style>
+<!-- sticky table -->
+    <script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("tbl_header");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>

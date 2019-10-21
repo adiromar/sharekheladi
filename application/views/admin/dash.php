@@ -265,7 +265,7 @@
                   </div>
       
                   <div class="col-md-4 mt-4">
-                    <label>Per Unit Share Price:</label>
+                    <label>Paid Up Value:</label>
                   </div>
                   <div class="col-md-8 mt-4">
                     <input type="number" step="0.01" name="share_price" class="">
@@ -372,7 +372,14 @@
                     <?php
                       echo '<option>--Select Sector--</option>';
                     foreach ($sector as $skey => $sval) {
-                      echo '<option value='.$sval['sector_id'].'>'.$sval['sector_name'].'</option>';
+                      $val = $this->admin_model->check_inserted_safety('safety_value', $sval['sector_id']);
+
+                      if($val[0]['sector_id'] == $sval['sector_id'] ){
+
+                      }else{
+                        echo '<option value='.$sval['sector_id'].'>'.$sval['sector_id'] . ' - ' . $sval['sector_name']. '</option>';
+                      }
+                      
                     }
                     ?>
                   </select>

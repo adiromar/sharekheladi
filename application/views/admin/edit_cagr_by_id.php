@@ -47,6 +47,7 @@ $cc_id = $com[0]['id'];
                   <div class="col-md-2">
                       <label for="">Beginning Price</label>
                   </div>
+
                   <div class="col-md-10">
                   <input type="number" step="0.01" name="beg_price" value="<?= $beg_price; ?>">
                   <input type="hidden" name="companyid" value="<?= $cc_id; ?>">
@@ -140,7 +141,7 @@ $cc_id = $com[0]['id'];
 </table> -->
 
  <script type="text/javascript">
- 	$(document).ready(function () {
+ 	$(document).ready(function () { 
       var count = 1;
       $('.add_form').on('click', function(e){
       e.preventDefault();

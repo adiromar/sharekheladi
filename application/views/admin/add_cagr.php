@@ -38,7 +38,7 @@ error_reporting('false');
         echo '<th>Company Name</th>';
         echo '<th>Symbol</th>';
         echo '<th>Fin. Year</th>';
-        echo '<th>Share Price</th>';
+        echo '<th>Paid Up Value</th>';
         echo '<th>Initial Price</th>';
         echo '<th>Bonus (%)</th>';
         echo '<th>Dividend (%)</th>';
@@ -250,7 +250,6 @@ error_reporting('false');
                       foreach ($sector as $skey => $scval) {
                         echo '<option value='.$scval['sector_id'].'>'.$scval['sector_name'].'</option>';
                       }
-
                       ?>
                     </select>
                     
@@ -271,7 +270,6 @@ error_reporting('false');
                     </select>
                   </div>
 
-
                   <table class="table tbl table-bordered table-striped table-responsive">
                     <tr>
                       <th>Year</th>
@@ -286,14 +284,13 @@ error_reporting('false');
                         
                       <tr class="add_after_me" id="add_after_me">
                       <td><input type="text" name="year[]" value="<?= $yr['financial_year']?>" readonly></td>
-                      
                       <td><input type="number" step="0.01" name="dividend[]"></td>
                       <!-- <td><input type="number" name="dividend_gain[]"></td> -->
                       <td><input type="number" step="0.01" name="bonus[]"></td>
                       <!-- <td><input type="number" name="bonus_gain[]"></td> -->
                       </tr>
 
-                      <?php }  ?>
+                      <?php } ?>
                       <!-- <td><a href="#" class="btn btn-secondary add_field">+</a></td> -->
                     
                   </table>
